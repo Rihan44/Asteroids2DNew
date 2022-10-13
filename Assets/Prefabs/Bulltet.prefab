@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 891945569721195306}
   - component: {fileID: 3633925061774611932}
   - component: {fileID: -6740686759866958796}
-  - component: {fileID: 193180294210357416}
+  - component: {fileID: -3903724862144389411}
   m_Layer: 0
   m_Name: Bulltet
   m_TagString: Bala
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9236a0f222b0b854e852029f0a0e4b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 200
+  speed: 300
 --- !u!50 &3633925061774611932
 Rigidbody2D:
   serializedVersion: 4
@@ -136,8 +136,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   limiteX: 12
   limiteY: 7
---- !u!61 &193180294210357416
-BoxCollider2D:
+--- !u!70 &-3903724862144389411
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -146,19 +146,9 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.016512822, y: -0.028401101}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.009415828, y: 0.06903694}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.017, y: -0.031286296}
+  m_Size: {x: 0.0090000015, y: 0.07070562}
+  m_Direction: 0

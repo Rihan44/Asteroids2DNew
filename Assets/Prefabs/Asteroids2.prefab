@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 724507966208909601}
   - component: {fileID: -5545078813241179627}
   - component: {fileID: 1241772690132022987}
-  - component: {fileID: -8141070589717274238}
+  - component: {fileID: -8157690157483149131}
   m_Layer: 0
   m_Name: Asteroids2
   m_TagString: Asteroid
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7453925026056129928}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.41, y: -0.04, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -137,8 +137,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed_min: 100
   speed_max: 200
---- !u!68 &-8141070589717274238
-EdgeCollider2D:
+  manager: {fileID: 0}
+--- !u!60 &-8157690157483149131
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -147,29 +148,42 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0.05
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 5.12, y: 5.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Points:
-  - {x: -0.409297, y: 0.6822121}
-  - {x: -0.25025415, y: 0.8914562}
-  - {x: 0.047435284, y: 0.8903447}
-  - {x: 0.228446, y: 0.7840277}
-  - {x: 0.3133998, y: 0.6119009}
-  - {x: 0.5033164, y: 0.41723496}
-  - {x: 0.61752605, y: 0.23621297}
-  - {x: 0.6763673, y: 0.090930924}
-  - {x: 0.52024317, y: -0.03948909}
-  - {x: 0.17523861, y: -0.24131721}
-  - {x: -0.22815895, y: -0.29803556}
-  - {x: -0.5080738, y: -0.043272927}
-  - {x: -0.47208357, y: 0.12580207}
-  - {x: -0.47430134, y: 0.46174738}
-  - {x: -0.45997143, y: 0.5970644}
-  - {x: -0.4001069, y: 0.6937751}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+    m_Paths:
+    - - {x: 0.203125, y: -0.046875}
+      - {x: 0.26953125, y: -0.02734375}
+      - {x: 0.28515625, y: 0}
+      - {x: 0.28515625, y: 0.09375}
+      - {x: 0.2578125, y: 0.1484375}
+      - {x: 0.17578125, y: 0.23046875}
+      - {x: 0.15625, y: 0.26953125}
+      - {x: 0.11328125, y: 0.33203125}
+      - {x: 0.0546875, y: 0.36328125}
+      - {x: -0.109375, y: 0.36328125}
+      - {x: -0.17578125, y: 0.3046875}
+      - {x: -0.1953125, y: 0.26171875}
+      - {x: -0.21875, y: 0.16015625}
+      - {x: -0.2109375, y: 0.11328125}
+      - {x: -0.1953125, y: 0.0859375}
+      - {x: -0.22265625, y: 0.0625}
+      - {x: -0.2265625, y: 0.05078125}
+      - {x: -0.2265625, y: -0.04296875}
+      - {x: -0.15234375, y: -0.11328125}
+      - {x: -0.09765625, y: -0.15234375}
+      - {x: -0.05859375, y: -0.15234375}
+      - {x: -0.0078125, y: -0.125}
+      - {x: 0.07421875, y: -0.12109375}
+      - {x: 0.1484375, y: -0.07421875}
