@@ -6,6 +6,7 @@ public class BulletController : MonoBehaviour
 {
     public float speed = 10;
     Rigidbody2D rb;
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class BulletController : MonoBehaviour
     {
         
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Asteroid")
@@ -25,5 +27,8 @@ public class BulletController : MonoBehaviour
             collision.gameObject.GetComponent<AsteroidControler>().Explota();
             Destroy(gameObject);
         }
+
     }
+
+
 }
