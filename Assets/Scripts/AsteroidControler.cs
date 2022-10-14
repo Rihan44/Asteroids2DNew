@@ -76,6 +76,9 @@ public class AsteroidControler : MonoBehaviour
             if(puntos < 0)
             {
                collision.gameObject.GetComponent<ShipMovement>().Death();
+               Muerte.muerteTexto.gameObject.SetActive(true);
+               ButtonScript.boton.gameObject.SetActive(true);
+               ButtonScript.botonMenu.gameObject.SetActive(true);
             }
             Destroy(gameObject);
         }

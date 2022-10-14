@@ -11,7 +11,6 @@ public class PuntosAsteroides : MonoBehaviour
     void Start()
     {
         texto = GetComponent<TextMeshProUGUI>();
-        //texto.enabled = false;
     }
 
     // Update is called once per frame
