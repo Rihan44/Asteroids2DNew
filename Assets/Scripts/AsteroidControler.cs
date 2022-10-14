@@ -72,12 +72,21 @@ public class AsteroidControler : MonoBehaviour
         if (collision.tag == "Player")
         {
             
-            int puntos = collision.gameObject.GetComponent<Points>().RestaPuntos();
+            int puntos = collision.gameObject.GetComponent<PointsLife>().RestaPuntos();
             if(puntos < 0)
             {
                collision.gameObject.GetComponent<ShipMovement>().Death();
             }
             Destroy(gameObject);
+        }
+
+        if (collision.tag == "Bala")
+        {
+            PuntosAsteroides.puntuacion += 1;
+            //int puntos = PuntosAsteroides.puntuacion;
+
+            collision.gameObject.GetComponent<BulletController>().DestruyeBala();
+            Explota();
         }
     }
 

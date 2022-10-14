@@ -239,6 +239,7 @@ GameObject:
   - component: {fileID: 266947029}
   - component: {fileID: 266947028}
   - component: {fileID: 266947027}
+  - component: {fileID: 266947030}
   m_Layer: 5
   m_Name: PuntosAsteroids
   m_TagString: Untagged
@@ -363,6 +364,18 @@ RectTransform:
   m_AnchoredPosition: {x: 203, y: 0.5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &266947030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266947026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc134c5c48239714a864ea655b5602aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &369861847
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,7 +1004,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 807, y: 503.1}
+  m_AnchoredPosition: {x: 788, y: 503.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1238640487
@@ -1285,6 +1298,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7595552040263934511, guid: 2943006d6f479bf4ca5d77938bb0bf62, type: 3}
       propertyPath: puntos
+      value: 
+      objectReference: {fileID: 266947027}
+    - target: {fileID: -7595552040263934511, guid: 2943006d6f479bf4ca5d77938bb0bf62, type: 3}
+      propertyPath: puntaje
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7595552040263934511, guid: 2943006d6f479bf4ca5d77938bb0bf62, type: 3}
+      propertyPath: puntosVida
       value: 
       objectReference: {fileID: 967741851}
     - target: {fileID: -7595552040263934511, guid: 2943006d6f479bf4ca5d77938bb0bf62, type: 3}
