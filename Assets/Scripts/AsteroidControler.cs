@@ -10,13 +10,15 @@ public class AsteroidControler : MonoBehaviour
     public float speed_max;
     public AsteroidManagment manager;
     Rigidbody2D rb;
-    // Start is called before the first frame update
+    private SoundManager soundManager;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         Vector2 direcion = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
         direcion = direcion * Random.Range(speed_min, speed_max);
         rb.AddForce(direcion);
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     // Update is called once per frame
@@ -35,6 +37,7 @@ public class AsteroidControler : MonoBehaviour
 
             GameObject temp2 = Instantiate(manager.asteroidesPrefabs[1], transform.position, transform.rotation);
             temp2.GetComponent<AsteroidControler>().manager = manager;
+            soundManager.SeleccionaAudio(2, 0.5f);
         }
 
         // Asteroide mediano
@@ -46,6 +49,7 @@ public class AsteroidControler : MonoBehaviour
 
             GameObject temp2 = Instantiate(manager.asteroidesPrefabs[0], transform.position, transform.rotation);
             temp2.GetComponent<AsteroidControler>().manager = manager;
+            soundManager.SeleccionaAudio(2, 0.5f);
         }
 
         // Asteroide pequeño
@@ -59,9 +63,9 @@ public class AsteroidControler : MonoBehaviour
             GameObject temp2 = Instantiate(manager.asteroidesPrefabs[0], transform.position, transform.rotation);
             temp2.GetComponent<AsteroidControler>().manager = manager;
             temp2.transform.localScale = transform.localScale * 0.7f;
-
+            soundManager.SeleccionaAudio(2, 0.5f);
         }
-
+        soundManager.SeleccionaAudio(2, 0.5f);
         Destroy(gameObject);
 
     }

@@ -13,6 +13,7 @@ public class ShipMovement : MonoBehaviour
     public GameObject bala;
     public GameObject bala2;
     public GameObject destructor1;
+    private SoundManager soundManager;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class ShipMovement : MonoBehaviour
         // GetComponent dice que en el objeto actual tengo x componentes y quiero buscar en este caso el que esta entre <> en este caso RigiBody
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     // Update is called once per frame
@@ -30,6 +32,7 @@ public class ShipMovement : MonoBehaviour
         // Este if evita que no puedas ir marcha atrás
         if (vertical > 0)
         {
+            //soundManager.SeleccionaAudio(1, 0.2f);
             rb2d.AddForce(transform.up * vertical * speed * Time.deltaTime);
             anim.SetBool("impulsing", true); // Aqui accedemos al parametro de la animacion 
         }
@@ -46,6 +49,7 @@ public class ShipMovement : MonoBehaviour
         // Disparos
         if (Input.GetButtonDown("Jump"))
         {
+            soundManager.SeleccionaAudio(0, 0.2f);
             GameObject balaDestroy = Instantiate(bala, destructor1.transform.position, transform.rotation);
             Destroy(balaDestroy, 2.8f);
         }
