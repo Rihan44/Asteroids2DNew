@@ -138,6 +138,7 @@ MonoBehaviour:
   speed_min: 100
   speed_max: 200
   manager: {fileID: 0}
+  shield: {fileID: 175870740308905531, guid: cbb6cdb003a312f4080f47b92da1e953, type: 3}
 --- !u!60 &-867995363384900093
 PolygonCollider2D:
   m_ObjectHideFlags: 0

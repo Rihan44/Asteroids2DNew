@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Asteroid
   - Bala
+  - Shield
   layers:
   - Default
   - TransparentFX

@@ -23,4 +23,9 @@ public class PointsLife : MonoBehaviour
     {
         return puntajeVida -= 1;
     }
+
+    public int SumaPuntos()
+    {
+        return puntajeVida += 1;
+    }
 }

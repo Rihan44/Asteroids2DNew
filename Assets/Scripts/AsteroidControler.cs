@@ -11,6 +11,7 @@ public class AsteroidControler : MonoBehaviour
     public AsteroidManagment manager;
     Rigidbody2D rb;
     private SoundManager soundManager;
+    public GameObject shield;
 
     void Start()
     {
@@ -77,7 +78,14 @@ public class AsteroidControler : MonoBehaviour
         {
             
             int puntos = collision.gameObject.GetComponent<PointsLife>().RestaPuntos();
-            if(puntos < 0)
+
+            if(puntos < 3)
+            {
+                ShieldGenerator.GeneradorEscudo(shield);
+                Debug.Log("Escudo generado");
+            }
+
+            if (puntos < 0)
             {
                collision.gameObject.GetComponent<ShipMovement>().Death();
                Muerte.muerteTexto.gameObject.SetActive(true);
