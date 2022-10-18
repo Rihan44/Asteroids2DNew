@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class AsteroidControler : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class AsteroidControler : MonoBehaviour
     public AsteroidManagment manager;
     Rigidbody2D rb;
     private SoundManager soundManager;
-    public GameObject shield;
 
     void Start()
     {
@@ -20,6 +20,7 @@ public class AsteroidControler : MonoBehaviour
         direcion = direcion * Random.Range(speed_min, speed_max);
         rb.AddForce(direcion);
         soundManager = FindObjectOfType<SoundManager>();
+        manager.asteroides += 1;
     }
 
     // Update is called once per frame
@@ -66,6 +67,8 @@ public class AsteroidControler : MonoBehaviour
             temp2.transform.localScale = transform.localScale * 0.7f;
             soundManager.SeleccionaAudio(2, 0.5f);
         }
+
+        manager.asteroides -= 1;
         soundManager.SeleccionaAudio(2, 0.5f);
         Destroy(gameObject);
 
@@ -76,30 +79,16 @@ public class AsteroidControler : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            
-            int puntos = collision.gameObject.GetComponent<PointsLife>().RestaPuntos();
+            manager.asteroides -= 1;
 
-            if(puntos < 1)
-            {
-                ShieldGenerator.GeneradorEscudo(shield);
-                //Debug.Log("Escudo generado");
-            }
+            collision.gameObject.GetComponent<ShipMovement>().Death();
 
-            if (puntos < 0)
-            {
-               collision.gameObject.GetComponent<ShipMovement>().Death();
-               Muerte.muerteTexto.gameObject.SetActive(true);
-               ButtonScript.boton.gameObject.SetActive(true);
-               ButtonScript.botonMenu.gameObject.SetActive(true);
-            }
             Destroy(gameObject);
         }
 
         if (collision.tag == "Bala")
         {
-            PuntosAsteroides.puntuacion += 1;
-            //int puntos = PuntosAsteroides.puntuacion;
-
+            GameManager.instancia.puntuacion += 1;
             collision.gameObject.GetComponent<BulletController>().DestruyeBala();
             Explota();
         }

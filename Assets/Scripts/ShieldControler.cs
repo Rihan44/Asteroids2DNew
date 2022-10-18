@@ -25,10 +25,8 @@ public class ShieldControler : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            collision.gameObject.GetComponent<PointsLife>().SumaPuntos();
+            GameManager.instancia.vidas += 1; ;
             Destroy(gameObject);
-
-            //Debug.Log("Puntos Sumados");
         }
     }
 }

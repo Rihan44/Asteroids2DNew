@@ -25,9 +25,11 @@ public class ButtonScript : MonoBehaviour
     public void CargarEscena()
     {
         SceneManager.LoadScene(0);
+        Time.timeScale = 1;
+        
     }
-    public void Inicio()
-    {
-        SceneManager.LoadScene(1);
-    }
+    //public void Inicio()
+    //{
+    //    SceneManager.LoadScene(1);
+    //}
 }

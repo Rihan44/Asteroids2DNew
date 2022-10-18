@@ -13,6 +13,7 @@ public class ShipMovement : MonoBehaviour
     public GameObject bala;
     public GameObject bala2;
     public GameObject destructor1;
+    public GameObject shield;
     private SoundManager soundManager;
 
     // Start is called before the first frame update
@@ -55,10 +56,29 @@ public class ShipMovement : MonoBehaviour
         }
     }
 
+    public void Posicion()
+    {
+        transform.position = new Vector3(0, 0, 0);
+        rb2d.velocity = new Vector2(0, 0);
+    }
 
     public void Death()
     {
-        Destroy(gameObject);
+        GameManager.instancia.vidas -= 1;
+        Posicion();
+        if (GameManager.instancia.vidas < 0)
+        {
+            Destroy(gameObject);
+            Time.timeScale = 0;
+            Muerte.muerteTexto.gameObject.SetActive(true);
+            ButtonScript.boton.gameObject.SetActive(true);
+            ButtonScript.botonMenu.gameObject.SetActive(true);
+        }
+
+        if (GameManager.instancia.vidas < 1)
+        {
+            ShieldGenerator.GeneradorEscudo(shield);
+        }
     }
 
 
