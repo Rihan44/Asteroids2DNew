@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ShieldGenerator : MonoBehaviour
 {
-    public static int shield_min = 2;
-    public static int shield_max = 3;
+    public static int shield_min = 1;
+    public static int shield_max = 2;
     public static float limitX = 12F;
     public static float limitY = 7F;
     void Start()

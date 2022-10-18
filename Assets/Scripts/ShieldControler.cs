@@ -20,4 +20,15 @@ public class ShieldControler : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PointsLife>().SumaPuntos();
+            Destroy(gameObject);
+
+            //Debug.Log("Puntos Sumados");
+        }
+    }
 }

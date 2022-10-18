@@ -14,7 +14,6 @@ public class ShipMovement : MonoBehaviour
     public GameObject bala2;
     public GameObject destructor1;
     private SoundManager soundManager;
-    public GameObject shield;
 
     // Start is called before the first frame update
     void Start()
@@ -56,14 +55,6 @@ public class ShipMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag == "Shield")
-        {
-            //collision.gameObject.GetComponent<PointsLife>().SumaPuntos();
-            Debug.Log("Puntos Sumados");
-        }
-    }
 
     public void Death()
     {

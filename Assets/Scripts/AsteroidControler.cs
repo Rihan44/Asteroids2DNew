@@ -79,10 +79,10 @@ public class AsteroidControler : MonoBehaviour
             
             int puntos = collision.gameObject.GetComponent<PointsLife>().RestaPuntos();
 
-            if(puntos < 3)
+            if(puntos < 1)
             {
                 ShieldGenerator.GeneradorEscudo(shield);
-                Debug.Log("Escudo generado");
+                //Debug.Log("Escudo generado");
             }
 
             if (puntos < 0)
