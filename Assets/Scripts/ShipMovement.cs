@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShipMovement : MonoBehaviour
 {
@@ -65,21 +66,19 @@ public class ShipMovement : MonoBehaviour
     public void Death()
     {
         GameManager.instancia.vidas -= 1;
+
         Posicion();
-        if (GameManager.instancia.vidas < 0)
-        {
-            Destroy(gameObject);
-            Time.timeScale = 0;
-            Muerte.muerteTexto.gameObject.SetActive(true);
-            ButtonScript.boton.gameObject.SetActive(true);
-            ButtonScript.botonMenu.gameObject.SetActive(true);
-        }
 
         if (GameManager.instancia.vidas < 1)
         {
             ShieldGenerator.GeneradorEscudo(shield);
         }
+
+        if (GameManager.instancia.vidas < 0)
+        {
+            Destroy(gameObject);
+            Time.timeScale = 0;
+            UIManager.instancia.death.gameObject.SetActive(true);
+        }
     }
-
-
 }

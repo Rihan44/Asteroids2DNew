@@ -20,6 +20,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-   
+        // Pone el juego en pausa
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Time.timeScale = 0;
+            UIManager.instancia.paused.gameObject.SetActive(true);
+            Botones.botones.boton.gameObject.SetActive(true);
+        }
     }
 }
