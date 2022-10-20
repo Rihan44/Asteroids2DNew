@@ -11,6 +11,7 @@ public class AsteroidManagment : MonoBehaviour
     public float limitX = 12F;
     public float limitY = 7F;
     public GameObject[] asteroidesPrefabs;
+    public GameObject particulaAsteroide;
 
 
     // Start is called before the first frame update

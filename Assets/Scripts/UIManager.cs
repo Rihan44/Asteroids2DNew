@@ -19,7 +19,7 @@ public class UIManager : MonoBehaviour
     {
         paused.gameObject.SetActive(false);
         death.gameObject.SetActive(false);
-        //start.gameObject.SetActive(false);
+        life.text = "0";
     }
 
     void Update()

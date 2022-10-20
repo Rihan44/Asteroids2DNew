@@ -19,8 +19,10 @@ public class ShipMovement : MonoBehaviour
     public GameObject bala2;
     public GameObject destructor1;
     public GameObject shield;
-    private SoundManager soundManager;
     public GameObject particulaEscudo;
+    //bool muerto = true;
+
+    private SoundManager soundManager;
 
 
     void Start()
@@ -40,7 +42,6 @@ public class ShipMovement : MonoBehaviour
         // Este if evita que no puedas ir marcha atr�s
         if (vertical > 0)
         {
-            //soundManager.SeleccionaAudio(1, 0.2f);
             rb2d.AddForce(transform.up * vertical * speed * Time.deltaTime);
             anim.SetBool("impulsing", true); // Aqui accedemos al parametro de la animacion 
         }
@@ -71,6 +72,7 @@ public class ShipMovement : MonoBehaviour
 
     public void Death()
     {
+        soundManager.SeleccionaAudio(3, 0.5f);
         GameManager.instancia.vidas -= 1;
         GameObject particulaShield = Instantiate(particulaEscudo, transform.position, transform.rotation);
 
@@ -81,9 +83,8 @@ public class ShipMovement : MonoBehaviour
         if(transform.position == new Vector3(0, 0, 0))
         {
             col.enabled = false;
+            StartCoroutine(Respawn_Coroutine());
         }
-
-        col.enabled = true;
 
         if (GameManager.instancia.vidas < 1)
         {
@@ -97,23 +98,11 @@ public class ShipMovement : MonoBehaviour
         }
     }
 
-    // Esto es solo para cuando muera
-    //IEnumerator Respawn_Coroutine()
-    //{
-    //    col.enabled = false;
-    //    sprite.enabled = false;
-    //    yield return new WaitForSeconds(2);
-    //    col.enabled = true;
-    //    sprite.enabled = true;
-
-    //    Posicion();
-
-    //    if (GameManager.instancia.vidas < 0)
-    //    {
-    //        Destroy(gameObject);
-    //        Time.timeScale = 0;
-    //        UIManager.instancia.death.gameObject.SetActive(true);
-    //    }
-
-    //}
+    IEnumerator Respawn_Coroutine()
+    {
+        //muerto = false;
+        yield return new WaitForSeconds(1);
+        col.enabled = true;
+        //muerto = true;
+    }
 }

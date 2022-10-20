@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 300
+  particulaAsteroide: {fileID: 2254957692801235243, guid: 8641332562679544aad4b76bf7ef0401, type: 3}
 --- !u!50 &3633925061774611932
 Rigidbody2D:
   serializedVersion: 4

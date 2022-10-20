@@ -37,14 +37,8 @@ public class Botones : MonoBehaviour
 
         if (boton.name.Equals("play"))
         {
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadScene("PantallaInicio");
             Time.timeScale = 1;
         }
-
-        //if (boton.name.Equals("start"))
-        //{
-        //    SceneManager.LoadScene("Game");
-        //    Debug.Log("EY");
-        //}
     }
 }
