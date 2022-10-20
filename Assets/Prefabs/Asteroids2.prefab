@@ -138,7 +138,7 @@ MonoBehaviour:
   speed_min: 100
   speed_max: 200
   manager: {fileID: 0}
-  shield: {fileID: 175870740308905531, guid: cbb6cdb003a312f4080f47b92da1e953, type: 3}
+  particulaAsteroide: {fileID: 1434540578131647003, guid: b3c1a5c084e7fc244a289be161174e99, type: 3}
 --- !u!60 &-8157690157483149131
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class AsteroidControler : MonoBehaviour
     public AsteroidManagment manager;
     Rigidbody2D rb;
     private SoundManager soundManager;
+    public GameObject particulaAsteroide;
 
     void Start()
     {
@@ -21,6 +22,7 @@ public class AsteroidControler : MonoBehaviour
         rb.AddForce(direcion);
         soundManager = FindObjectOfType<SoundManager>();
         manager.asteroides += 1;
+        particulaAsteroide = GetComponent<GameObject>();
     }
 
     // Update is called once per frame
@@ -67,6 +69,9 @@ public class AsteroidControler : MonoBehaviour
             temp2.transform.localScale = transform.localScale * 0.7f;
             soundManager.SeleccionaAudio(2, 0.5f);
         }
+
+        GameObject particulasAsteroid = Instantiate(particulaAsteroide, transform.position, transform.rotation);
+        Destroy(particulasAsteroid, 2.5f);
 
         manager.asteroides -= 1;
         soundManager.SeleccionaAudio(2, 0.5f);

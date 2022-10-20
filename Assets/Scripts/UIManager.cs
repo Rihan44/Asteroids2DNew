@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI life;
     public TextMeshProUGUI paused;
     public TextMeshProUGUI death;
+   // public TextMeshProUGUI start;
     private void Awake()
     {
         instancia = this;
@@ -18,6 +19,7 @@ public class UIManager : MonoBehaviour
     {
         paused.gameObject.SetActive(false);
         death.gameObject.SetActive(false);
+        //start.gameObject.SetActive(false);
     }
 
     void Update()
@@ -25,5 +27,11 @@ public class UIManager : MonoBehaviour
         textoTiempo.text = Time.time.ToString("00.00");
         points.text = GameManager.instancia.puntuacion.ToString();
         life.text = GameManager.instancia.vidas.ToString();
+
+        if(GameManager.instancia.vidas < 0)
+        {
+            death.gameObject.SetActive(true);
+            life.text = "0";
+        }
     }
 }

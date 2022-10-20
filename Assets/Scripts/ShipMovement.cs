@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,27 +12,32 @@ public class ShipMovement : MonoBehaviour
 
     Rigidbody2D rb2d;
     Animator anim;
+    PolygonCollider2D col;
+    SpriteRenderer sprite;
+
     public GameObject bala;
     public GameObject bala2;
     public GameObject destructor1;
     public GameObject shield;
     private SoundManager soundManager;
+    public GameObject particulaEscudo;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         // GetComponent dice que en el objeto actual tengo x componentes y quiero buscar en este caso el que esta entre <> en este caso RigiBody
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         soundManager = FindObjectOfType<SoundManager>();
+        col = GetComponent<PolygonCollider2D>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         float vertical = Input.GetAxis("Vertical");
 
-        // Este if evita que no puedas ir marcha atrás
+        // Este if evita que no puedas ir marcha atrï¿½s
         if (vertical > 0)
         {
             //soundManager.SeleccionaAudio(1, 0.2f);
@@ -66,8 +72,18 @@ public class ShipMovement : MonoBehaviour
     public void Death()
     {
         GameManager.instancia.vidas -= 1;
+        GameObject particulaShield = Instantiate(particulaEscudo, transform.position, transform.rotation);
+
+        Destroy(particulaShield, 2.5f);
 
         Posicion();
+
+        if(transform.position == new Vector3(0, 0, 0))
+        {
+            col.enabled = false;
+        }
+
+        col.enabled = true;
 
         if (GameManager.instancia.vidas < 1)
         {
@@ -78,7 +94,26 @@ public class ShipMovement : MonoBehaviour
         {
             Destroy(gameObject);
             Time.timeScale = 0;
-            UIManager.instancia.death.gameObject.SetActive(true);
         }
     }
+
+    // Esto es solo para cuando muera
+    //IEnumerator Respawn_Coroutine()
+    //{
+    //    col.enabled = false;
+    //    sprite.enabled = false;
+    //    yield return new WaitForSeconds(2);
+    //    col.enabled = true;
+    //    sprite.enabled = true;
+
+    //    Posicion();
+
+    //    if (GameManager.instancia.vidas < 0)
+    //    {
+    //        Destroy(gameObject);
+    //        Time.timeScale = 0;
+    //        UIManager.instancia.death.gameObject.SetActive(true);
+    //    }
+
+    //}
 }
