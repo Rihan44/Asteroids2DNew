@@ -435,7 +435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5769013f6f11934294c7b133044ed5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidas: 3
+  vidas: 2
   puntuacion: 0
 --- !u!4 &121854490
 Transform:
@@ -700,9 +700,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audios:
   - {fileID: 8300000, guid: a530fcd602c63154b81bb734ff7aa774, type: 3}
-  - {fileID: 8300000, guid: c7cc8dc01ab0afb4cb47ba7b37d68d7c, type: 3}
+  - {fileID: 8300000, guid: 0739232f05506c742b3782c0523a1e92, type: 3}
   - {fileID: 8300000, guid: fde436aa137a8494eaa3ad00a1923d95, type: 3}
   - {fileID: 8300000, guid: 0707dd7c759c8a4489d77c70610fe0be, type: 3}
+  - {fileID: 8300000, guid: 9ea2eaebff4189a439598d8e118a71f8, type: 3}
 --- !u!1 &369861847
 GameObject:
   m_ObjectHideFlags: 0
