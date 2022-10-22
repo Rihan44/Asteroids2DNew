@@ -20,6 +20,7 @@ public class ShipMovement : MonoBehaviour
     public GameObject destructor1;
     public GameObject shield;
     public GameObject particulaEscudo;
+    public GameObject particulaMuerte;
     bool muerto = true;
 
     private SoundManager soundManager;
@@ -85,10 +86,15 @@ public class ShipMovement : MonoBehaviour
         if (GameManager.instancia.vidas >= 0)
         {
             soundManager.SeleccionaAudio(3, 0.5f);
+            GameObject particulaShield = Instantiate(particulaEscudo, transform.position, transform.rotation);
+            Destroy(particulaShield, 2.5f);
         }
 
-        GameObject particulaShield = Instantiate(particulaEscudo, transform.position, transform.rotation);
-        Destroy(particulaShield, 2.5f);
+        if (GameManager.instancia.vidas < 0)
+        {
+            GameObject particulaDeath = Instantiate(particulaMuerte, transform.position, transform.rotation);
+            Destroy(particulaDeath, 2.5f);
+        }
 
         Posicion();
 

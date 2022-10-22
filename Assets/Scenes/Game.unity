@@ -2657,6 +2657,10 @@ PrefabInstance:
       propertyPath: particulaEscudo
       value: 
       objectReference: {fileID: 2254957692801235243, guid: 6bcc2411d537703418268d5a1028ce31, type: 3}
+    - target: {fileID: 951787779296505110, guid: 2943006d6f479bf4ca5d77938bb0bf62, type: 3}
+      propertyPath: particulaMuerte
+      value: 
+      objectReference: {fileID: 2254957692801235243, guid: 8641332562679544aad4b76bf7ef0401, type: 3}
     - target: {fileID: 951787779296505112, guid: 2943006d6f479bf4ca5d77938bb0bf62, type: 3}
       propertyPath: m_RootOrder
       value: 2
