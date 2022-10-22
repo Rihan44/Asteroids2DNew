@@ -21,6 +21,7 @@ public class ShipMovement : MonoBehaviour
     public GameObject shield;
     public GameObject particulaEscudo;
     public GameObject particulaMuerte;
+    public GameObject[] vidas;
     bool muerto = true;
 
     private SoundManager soundManager;
@@ -83,6 +84,24 @@ public class ShipMovement : MonoBehaviour
     public void Death()
     {
         GameManager.instancia.vidas -= 1;
+
+        if(GameManager.instancia.vidas < 3)
+        {
+            vidas[0].gameObject.SetActive(false);
+        }
+
+        if (GameManager.instancia.vidas < 2)
+        {
+            vidas[1].gameObject.SetActive(false);
+        }
+
+        if (GameManager.instancia.vidas < 1)
+        {
+            vidas[2].gameObject.SetActive(false);
+        }
+
+
+
         if (GameManager.instancia.vidas >= 0)
         {
             soundManager.SeleccionaAudio(3, 0.5f);
