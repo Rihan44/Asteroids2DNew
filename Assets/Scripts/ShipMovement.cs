@@ -19,6 +19,7 @@ public class ShipMovement : MonoBehaviour
     public GameObject bala2;
     public GameObject destructor1;
     public GameObject shield;
+    public GameObject enemy;
     public GameObject particulaEscudo;
     public GameObject particulaMuerte;
     public GameObject[] vidas;
@@ -39,6 +40,7 @@ public class ShipMovement : MonoBehaviour
 
     void Update()
     {
+
         if (muerto)
         {
             float vertical = Input.GetAxis("Vertical");
@@ -98,9 +100,10 @@ public class ShipMovement : MonoBehaviour
         if (GameManager.instancia.vidas < 1)
         {
             vidas[2].gameObject.SetActive(false);
+        } else if(GameManager.instancia.vidas > 1)
+        {
+            vidas[2].gameObject.SetActive(true);
         }
-
-
 
         if (GameManager.instancia.vidas >= 0)
         {
@@ -122,6 +125,11 @@ public class ShipMovement : MonoBehaviour
         if (GameManager.instancia.vidas < 1)
         {
             ShieldGenerator.GeneradorEscudo(shield);
+        }
+
+        if (GameManager.instancia.vidas < 2)
+        {
+            EnemyManager.InstanciarEnemy(enemy);
         }
 
     }

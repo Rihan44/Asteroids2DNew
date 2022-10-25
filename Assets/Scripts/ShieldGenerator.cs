@@ -10,6 +10,7 @@ public class ShieldGenerator : MonoBehaviour
     public static float limitY = 7F;
     void Start()
     {
+
     }
 
     void Update()
