@@ -147,7 +147,6 @@ public class ShipMovement : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
 
         // Después de la espera
-        col.enabled = true;
         sprite.enabled = true;
         muerto = true;
 
@@ -156,5 +155,9 @@ public class ShipMovement : MonoBehaviour
             Destroy(gameObject);
             Time.timeScale = 0;
         }
+
+        yield return new WaitForSeconds(1.5f);
+        col.enabled = true;
+
     }
 }
