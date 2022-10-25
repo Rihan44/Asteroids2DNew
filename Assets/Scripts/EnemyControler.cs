@@ -6,7 +6,6 @@ public class EnemyControler : MonoBehaviour
 {
     public float speed_min;
     public float speed_max;
-    //public GameObject bala;
     private SoundManager soundManager;
     Rigidbody2D rb;
     void Start()
@@ -21,12 +20,6 @@ public class EnemyControler : MonoBehaviour
 
     void Update()
     {
-        //if(Input.GetButtonDown("Jump"))
-        //{
-        //    soundManager.SeleccionaAudio(0, 0.2f);
-        //    GameObject balaDestroy = Instantiate(bala, transform.position, transform.rotation);
-        //    Destroy(balaDestroy, 2.8f);
-        //}
    
     }
 

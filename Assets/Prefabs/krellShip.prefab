@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 817778364228440907}
   - component: {fileID: -6555707544982449866}
   - component: {fileID: -3472750947655849343}
-  - component: {fileID: -3161782442582845925}
+  - component: {fileID: -2369435892419388647}
   m_Layer: 0
   m_Name: krellShip
   m_TagString: Enemy
@@ -137,8 +137,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   limiteX: 12
   limiteY: 7
---- !u!68 &-3161782442582845925
-EdgeCollider2D:
+--- !u!70 &-2369435892419388647
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -147,15 +147,9 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -1.2695312, y: 0}
-  - {x: 1.2695312, y: 0}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+  m_Offset: {x: -0.04299879, y: -0.06879836}
+  m_Size: {x: 2.0746741, y: 4.9405284}
+  m_Direction: 0

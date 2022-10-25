@@ -435,7 +435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5769013f6f11934294c7b133044ed5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidas: 3
+  vidas: 1
   puntuacion: 0
 --- !u!4 &121854490
 Transform:
