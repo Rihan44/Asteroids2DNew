@@ -89,6 +89,10 @@ public class AsteroidControler : MonoBehaviour
         if (collision.tag == "Bala")
         {
             GameManager.instancia.puntuacion += 1;
+            if(GameManager.instancia.puntuacion >=250)
+            {
+                Time.timeScale = 0;
+            }
             collision.gameObject.GetComponent<BulletController>().DestruyeBala();
             Explota();
         }

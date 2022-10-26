@@ -33,7 +33,6 @@ public class UIManager : MonoBehaviour
         if(GameManager.instancia.puntuacion >= 250)
         {
             win.gameObject.SetActive(true);
-            Time.timeScale = 0;
         }
     }
 }
